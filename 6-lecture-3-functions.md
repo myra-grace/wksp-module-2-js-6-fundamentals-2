@@ -18,7 +18,31 @@ is a variable in function, or method, definition.
 
 ```js
 // Example
+function greeting(name) {
+    return `${}! Want some ice cream?`;
+}
 
+greeting(`Jack`); ->Jack! Want some ice? 
+
+//example2
+function greeting(names) {
+    names.forEach(function(name)){
+        console.log(`${name}! Want some ice cream?`);
+    });
+    
+}
+
+greeting([`Jack`, `Daniel`, `Bob`]); ->Jack! Want some ice?   Daniel! Want some ice?   Bob! Want some ice?
+
+//example3
+function greeting(names) {
+    return names.forEach(function(name)){
+        return `${name}! Want some ice cream?`;
+    });
+    
+}
+
+console.log((greeting([`Jack`, `Daniel`, `Bob`]))); ->Jack! Want some ice?   Daniel! Want some ice?   Bob! Want some ice?
 ```
 
 ---
@@ -41,7 +65,7 @@ function f() {
     console.log("hello");
 }
 
-f("bye");
+f("bye"); ->'hello'
 ```
 
 ---
@@ -93,6 +117,12 @@ The third way is an arrow function
 someFunc = () => {
     // do something...
 }
+
+//example
+someFunc = (num1, num2) => {
+    // do something...
+}
+names.map((name) => `Hi${name});
 ```
 
 This is equivalent to the previous way of _defining_ a function. 
@@ -115,11 +145,21 @@ someFunc = () => {
     return 'bacon';
 }
 
-console.log(someFunc());
+console.log(someFunc()); -> bacon
 ```
 
 `return` is the end of the line...
 
+
+// Example2
+someFunc = () => {
+    return 'bacon';
+}
+
+otherFunc = (string) =>
+    reutrn string.split();
+
+console.log(otherFunk(someFunc())); -> ['b','a','c','o','n']
 ---
 
 Functions are a Fundamental building block of JavaScript.

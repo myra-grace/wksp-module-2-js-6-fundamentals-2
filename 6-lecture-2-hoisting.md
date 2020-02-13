@@ -22,7 +22,7 @@ console.log(greeting);
 var greeting = 'Hello';
 
 // a. 'Hello'
-// b. undefined
+// b. undefined  THIS ONE
 // c. Uncaught ReferenceError: greeting is not defined
 ```
 
@@ -39,7 +39,7 @@ const anotherGreeting = 'Good evening';
 
 // a. 'Good evening'
 // b. undefined
-// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
+// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization  THIS ONE(doesn't hoist const)
 ```
 
 ---
@@ -51,7 +51,7 @@ let yetAnotherGreeting = 'Goodnight';
 
 // a. 'Good evening'
 // b. undefined
-// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization
+// c. ReferenceError: can't access lexical declaration `anotherGreeting' before initialization  THIS ONE(doesn't hoist let)
 ```
 
 ---
@@ -68,6 +68,8 @@ function greetMe() {
 }
 greetMe();
 var yourName = 'Fred';
+
+console.log(greetMe) -> Hi undefined
 ```
 
 ---
