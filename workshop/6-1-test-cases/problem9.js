@@ -13,12 +13,21 @@ let verifyEquals = require('../../assets/verify-equals');
 //    - A for loop might be helpful
 
 function f(str) {
-
+    let words = str.split(' ');
+    let longest = '';
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length >= longest.length) {
+            longest = words[i];
+        }
+    }
+    return longest
 }
 
+console.log(f("hey hello morning"));
+
 // Test cases
-let inputs = [];
-let outputs = [];
+let inputs = ["hey hi", "dhsajdk kdjhaks jh", "eobb rnvieern vnir vn", "", "238 m 4r"];
+let outputs = ['hey', 'kdjhaks', 'rnvieern', '', '238'];
 
 // STOP -----------------------------------------------------------------
 // No code changes below. This is the actual test that will run your test cases and validate your function.
